@@ -9,7 +9,7 @@ const uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', '
 const getOptions = () => {
   const length = parseInt(prompt('Choose a number between 8 and 128 for a password'))
 
-  if (length < 8 || length > 128 || Number.isNanN(length)) {
+  if (length < 8 || length > 128 || Number.isNaN(length)) {
     alert('Invalid Password length')
     return null
   }
