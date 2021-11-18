@@ -1,3 +1,4 @@
+  //The characters that will randomly go into your password based on your answers
 const specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '<', '>']
 
 const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -6,6 +7,7 @@ const lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', '
 
 const uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
+  //starts the series of prompts for your password
 const getOptions = () => {
   const length = parseInt(prompt('Choose a number between 8 and 128 for a password'))
 
@@ -35,6 +37,7 @@ const getPassword = () => {
   let canHaves = []
   let mustHaves = []
 
+  //based on your answers and randomly generates a character for your password
   if (options.hasSpecialChar) {
     canHaves = canHaves.concat(specialChar)
     mustHaves.push(getRandom(specialChar))
@@ -62,7 +65,8 @@ const getPassword = () => {
   for (let i = 0; i < mustHaves.length; i++) {
     passwordArr[i] = mustHaves[i]
   }
-
+  
+  //returns back the password you 'wanted'
   return passwordArr.join('')
 }
 
